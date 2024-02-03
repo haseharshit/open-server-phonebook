@@ -37,6 +37,11 @@ let contacts=[
       "id": 4,
       "name": "Mary Poppendieck", 
       "number": "39-23-6423122"
+    },
+    {
+        "id":642,
+        "name": "Torshabla",
+        "number": "642642642"
     }
 ]
 
