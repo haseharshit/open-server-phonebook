@@ -4,8 +4,12 @@
   "description": "FullstackOpen Exercises",
   "main": "index.js",
   "scripts": {
+    "refresh:ui": "rm -rf dist && cd ../FullstackOpen/part2/phonebook && npm run build && cp -r dist ../../../FullstackOpenBackend",
+    "deploy": "npm run refresh:ui && git push origin",
+    "deploy:full":"npm run refresh:ui && git add . && git commit -m 'Deploy frontend' && git push" ,
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "onetwo": "echo hi && echo \"$1\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

@@ -4,6 +4,7 @@ const morgan = require("morgan")
 const cors =require("cors")
 const app= express()
 app.use(cors())
+app.use(express.static('dist'))
 morgan.token('body', (req)=>{
     return `${JSON.stringify(req.body)}`
 })
@@ -66,9 +67,9 @@ app.delete('/api/persons/:id', (req,res) => {
     const body=contacts.find((contact)=> contact.id===id)
     if(body){
         contacts=contacts.filter(contact => contact.id!==body.id)
-        res.send(body)
+        return res.send(body)
     }
-    res.status(404).send({"error":"Person with provided id is not found"})
+    return res.status(404).send({"error":"Person with provided id is not found"})
 
 })
 
