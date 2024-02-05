@@ -75,12 +75,15 @@ app.delete('/api/persons/:id', (req,res) => {
 
 app.post('/api/persons', (req, res)=>{
     if(req.body.name){
-        return contacts.find(contact=> contact.name.toLowerCase()===req.body.name.toLowerCase())? 
-        (res.status(400).send({error:"Name must be unique"})): 
-        (contacts=contacts.concat({
+        if(contacts.find(contact=> contact.name.toLowerCase()===req.body.name.toLowerCase()))
+            return res.status(400).send({error:"Name must be unique"})
+        const newContact = {
             id: Math.round(Math.random()*1000000),
             name: req.body.name,
-            number: req.body.number?req.body.number:""})) && res.send("Record added successfully")
+            number: req.body.number?req.body.number:""}
+        
+        contacts=contacts.concat(newContact)
+        return res.json(newContact)
     }
     res.status(400).send({error: "Unable to get name attribute"})
 })
