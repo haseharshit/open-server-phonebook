@@ -1,15 +1,21 @@
 GET http://localhost:3000/api/persons
 
 ###
-GET http://localhost:3000/api/persons/3
+GET http://localhost:3000/api/persons/6603b2a7554c87fcd45ed514
 
 ###
-DELETE http://localhost:3000/api/persons/2
+GET http://localhost:3000/info
+
+###
+DELETE http://localhost:3000/api/persons/65fe98a7c9ce7671eb072cad
 
 ###
 POST http://localhost:3000/api/persons
 Content-Type: application/json
 
 {
-    "name": "Harshists"
+    "names": "az",
+    "number": "131-2455"
 }
+
+###

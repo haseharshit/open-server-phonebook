@@ -6,7 +6,7 @@
   "scripts": {
     "refresh:ui": "rm -rf dist && cd ../FullstackOpen/part2/phonebook && npm run build && cp -r dist ../../../FullstackOpenBackend",
     "deploy": "npm run refresh:ui && git push origin",
-    "deploy:full":"npm run refresh:ui && git add . && git commit -m 'Deploy frontend' && git push" ,
+    "deploy:full": "npm run refresh:ui && git add . && git commit -m 'Deploy frontend' && git push",
     "start": "node index.js",
     "dev": "nodemon index.js",
     "onetwo": "echo hi && echo \"$1\"",
@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.18.2",
+    "mongoose": "^8.1.1",
     "morgan": "^1.10.0"
   }
 }
